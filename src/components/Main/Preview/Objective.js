@@ -4,8 +4,8 @@ class Objective extends Component {
   render() {
     return (
       <div>
-        <h3>Objective</h3>
-        <p>{this.props.objective}</p>
+        <h3 className='text-lg font-semibold mb-2'>Objective</h3>
+        <p className='text-gray-700'>{this.props.objective}</p>
       </div>
     );
   }
