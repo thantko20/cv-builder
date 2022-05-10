@@ -30,7 +30,16 @@ class Main extends Component {
           summary: 'I did not do too well lmao',
         },
       ],
-      experience: [],
+      experience: [
+        {
+          from: '2020',
+          to: '2022',
+          jobTitle: 'React Developer',
+          company: 'Facebook',
+          summary:
+            'Mark Zuckerberg begged me not to resign. But I wanted to work for your company so I chose to quit and join yours.',
+        },
+      ],
     };
   }
 

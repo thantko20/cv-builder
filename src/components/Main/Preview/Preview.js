@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Education from './Education';
+import Experience from './Experience';
 import GeneralInfo from './GeneralInfo';
 import Objective from './Objective';
 
@@ -18,6 +19,7 @@ class Preview extends Component {
         />
         <Objective objective={objective} />
         <Education education={education} />
+        <Experience experience={experience} />
       </div>
     );
   }
