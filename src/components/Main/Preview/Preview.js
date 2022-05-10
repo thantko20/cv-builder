@@ -9,7 +9,7 @@ class Preview extends Component {
     const { generalInfo, objective, education, experience } = this.props;
 
     return (
-      <div className='flex flex-col gap-10 bg-white w-[700px] py-12 px-10'>
+      <div className='flex flex-col gap-10 bg-white w-[760px] py-12 px-10 flex-shrink-0'>
         <GeneralInfo
           name={generalInfo.name}
           address={generalInfo.address}

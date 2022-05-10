@@ -39,13 +39,29 @@ class Main extends Component {
           summary:
             'Mark Zuckerberg begged me not to resign. But I wanted to work for your company so I chose to quit and join yours.',
         },
+        {
+          from: '2020',
+          to: '2022',
+          jobTitle: 'React Developer',
+          company: 'Facebook',
+          summary:
+            'Mark Zuckerberg begged me not to resign. But I wanted to work for your company so I chose to quit and join yours.',
+        },
+        {
+          from: '2020',
+          to: '2022',
+          jobTitle: 'React Developer',
+          company: 'Facebook',
+          summary:
+            'Mark Zuckerberg begged me not to resign. But I wanted to work for your company so I chose to quit and join yours.',
+        },
       ],
     };
   }
 
   render() {
     return (
-      <main>
+      <main className='p-20 flex items-start'>
         <Preview
           generalInfo={this.person.generalInfo}
           objective={this.person.objective}

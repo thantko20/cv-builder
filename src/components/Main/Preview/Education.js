@@ -7,7 +7,7 @@ class Education extends Component {
     return (
       <div>
         <h3 className='text-lg font-semibold mb-2'>Education</h3>
-        <div className='flex flex-col items-start gap-2'>
+        <div className='flex flex-col items-start gap-4'>
           {education.map((info) => {
             return (
               <EducationRow

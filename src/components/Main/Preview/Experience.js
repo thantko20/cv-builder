@@ -8,7 +8,7 @@ class Experience extends Component {
     return (
       <div>
         <h3 className='text-lg font-semibold mb-2'>Experience</h3>
-        <div>
+        <div className='flex flex-col items-start gap-4'>
           {experience.map((info) => (
             <ExperienceRow
               from={info.from}
