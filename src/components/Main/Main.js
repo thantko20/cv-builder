@@ -12,7 +12,8 @@ class Main extends Component {
         email: 'example@mail.com',
         website: 'www.me.com',
       },
-      objective: '',
+      objective:
+        "I'm an aspiring front-end web developer based in Burma. I have created several websites with smooth UI and UX. I'm eagered to learn new techonology in this field. I spend my free time with my loved ones",
       education: [],
       experience: [],
     };
@@ -23,6 +24,7 @@ class Main extends Component {
       <main>
         <Preview
           generalInfo={this.cv.generalInfo}
+          objective={this.cv.objective}
           education={this.cv.education}
           experience={this.cv.experience}
         />
