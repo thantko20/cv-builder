@@ -4,7 +4,7 @@ import Preview from './Preview/Preview';
 class Main extends Component {
   constructor(props) {
     super(props);
-    this.cv = {
+    this.person = {
       generalInfo: {
         name: 'John Doe',
         address: '13th Street, New York, US.',
@@ -13,8 +13,23 @@ class Main extends Component {
         website: 'www.me.com',
       },
       objective:
-        "I'm an aspiring front-end web developer based in Burma. I have created several websites with smooth UI and UX. I'm eagered to learn new techonology in this field. I spend my free time with my loved ones",
-      education: [],
+        "I'm an aspiring front-end web developer based in Burma. I have created several websites with smooth UI and UX for several clients. I mainly develop in MERN stack. I spend my free time with my loved ones.",
+      education: [
+        {
+          placeOfStudy: 'University Of Medicine(1), Yangon',
+          from: '2017',
+          to: 'present',
+          degree: 'MBBS',
+          summary: 'I did not do too well lmao',
+        },
+        {
+          placeOfStudy: 'University Of Medicine(1), Yangon',
+          from: '2017',
+          to: 'present',
+          degree: 'MBBS',
+          summary: 'I did not do too well lmao',
+        },
+      ],
       experience: [],
     };
   }
@@ -23,10 +38,10 @@ class Main extends Component {
     return (
       <main>
         <Preview
-          generalInfo={this.cv.generalInfo}
-          objective={this.cv.objective}
-          education={this.cv.education}
-          experience={this.cv.experience}
+          generalInfo={this.person.generalInfo}
+          objective={this.person.objective}
+          education={this.person.education}
+          experience={this.person.experience}
         />
       </main>
     );
