@@ -7,7 +7,7 @@ class Main extends Component {
     this.cv = {
       generalInfo: {
         name: 'John Doe',
-        address: 'New York',
+        address: '13th Street, New York, US.',
         phone: '12345678',
         email: 'example@mail.com',
         website: 'www.me.com',
