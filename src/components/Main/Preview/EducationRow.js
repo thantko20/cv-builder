@@ -7,7 +7,7 @@ class EducationRow extends Component {
       <div className='text-sm font-semibold'>
         <div>
           <span>{placeOfStudy}</span> |{' '}
-          <span className='italic'>
+          <span className='italic text-blue-800'>
             {from} - {to}
           </span>
         </div>
