@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
+import uniqid from 'uniqid';
 
 const person = {
   generalInfo: {
@@ -9,50 +10,30 @@ const person = {
     address: '13th Street, New York, US.',
     phone: '12345678',
     email: 'example@mail.com',
-    website: 'www.me.com',
+    website: 'www.github.com/thantko20',
   },
   description:
-    "I'm an aspiring front-end web developer based in Burma. I have created several websites with smooth UI and UX for several clients. I mainly develop in MERN stack. I spend my free time with my loved ones.",
+    "I'm an aspiring front-end web developer based in New York. I have created websites with elegant UI and UX for several clients. I do freelance but would be happy to join a team of talented developers. I spend free time with my loved oens.",
   education: [
     {
-      placeOfStudy: 'University Of Medicine(1), Yangon',
+      placeOfStudy: 'Massachusetts Institute of Technology',
       from: '2017',
-      to: 'present',
-      degree: 'MBBS',
-      summary: 'I did not do too well lmao',
-    },
-    {
-      placeOfStudy: 'University Of Medicine(1), Yangon',
-      from: '2017',
-      to: 'present',
-      degree: 'MBBS',
-      summary: 'I did not do too well lmao',
+      to: '2021',
+      degree: 'BSc Computer Science',
+      summary:
+        'I did not go to MIT. I included this just to impress recruiters and employers. No need to go to MIT because I have a brain of Einstein and am better than an average MIT student.',
+      id: uniqid(),
     },
   ],
   experience: [
     {
-      from: '2020',
-      to: '2022',
+      from: '2021',
+      to: 'Present',
       jobTitle: 'React Developer',
       company: 'Facebook',
       summary:
-        'Mark Zuckerberg begged me not to resign. But I wanted to work for your company so I chose to quit and join yours.',
-    },
-    {
-      from: '2020',
-      to: '2022',
-      jobTitle: 'React Developer',
-      company: 'Facebook',
-      summary:
-        'Mark Zuckerberg begged me not to resign. But I wanted to work for your company so I chose to quit and join yours.',
-    },
-    {
-      from: '2020',
-      to: '2022',
-      jobTitle: 'React Developer',
-      company: 'Facebook',
-      summary:
-        'Mark Zuckerberg begged me not to resign. But I wanted to work for your company so I chose to quit and join yours.',
+        "Mark Zuckerberg is begging me not to resign. But I want to work for your company so I'm going to quit Facebook and join yours.",
+      id: uniqid(),
     },
   ],
 };
