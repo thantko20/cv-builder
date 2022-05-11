@@ -5,71 +5,40 @@ import EditMode from './EditMode/EditMode';
 class Main extends Component {
   constructor(props) {
     super(props);
-    this.person = {
-      generalInfo: {
-        name: 'John Doe',
-        jobTitle: 'Front-End Developer',
-        address: '13th Street, New York, US.',
-        phone: '12345678',
-        email: 'example@mail.com',
-        website: 'www.me.com',
-      },
-      description:
-        "I'm an aspiring front-end web developer based in Burma. I have created several websites with smooth UI and UX for several clients. I mainly develop in MERN stack. I spend my free time with my loved ones.",
-      education: [
-        {
-          placeOfStudy: 'University Of Medicine(1), Yangon',
-          from: '2017',
-          to: 'present',
-          degree: 'MBBS',
-          summary: 'I did not do too well lmao',
-        },
-        {
-          placeOfStudy: 'University Of Medicine(1), Yangon',
-          from: '2017',
-          to: 'present',
-          degree: 'MBBS',
-          summary: 'I did not do too well lmao',
-        },
-      ],
-      experience: [
-        {
-          from: '2020',
-          to: '2022',
-          jobTitle: 'React Developer',
-          company: 'Facebook',
-          summary:
-            'Mark Zuckerberg begged me not to resign. But I wanted to work for your company so I chose to quit and join yours.',
-        },
-        {
-          from: '2020',
-          to: '2022',
-          jobTitle: 'React Developer',
-          company: 'Facebook',
-          summary:
-            'Mark Zuckerberg begged me not to resign. But I wanted to work for your company so I chose to quit and join yours.',
-        },
-        {
-          from: '2020',
-          to: '2022',
-          jobTitle: 'React Developer',
-          company: 'Facebook',
-          summary:
-            'Mark Zuckerberg begged me not to resign. But I wanted to work for your company so I chose to quit and join yours.',
-        },
-      ],
+    this.state = {
+      generalInfo: this.props.generalInfo,
+      description: this.props.description,
+      education: this.props.education,
+      experience: this.props.experience,
     };
+
+    this.handleData = this.handleData.bind(this);
+  }
+
+  handleData(data) {
+    this.setState({
+      generalInfo: data.generalInfo,
+      description: data.description,
+      education: data.education,
+      experience: data.experience,
+    });
   }
 
   render() {
     return (
       <main className='p-4 flex flex-col justify-center items-start gap-5 lg:flex-row'>
-        <EditMode />
+        <EditMode
+          generalInfo={this.state.generalInfo}
+          description={this.state.description}
+          education={this.state.education}
+          experience={this.state.experience}
+          handleData={this.handleData}
+        />
         <Preview
-          generalInfo={this.person.generalInfo}
-          description={this.person.description}
-          education={this.person.education}
-          experience={this.person.experience}
+          generalInfo={this.state.generalInfo}
+          description={this.state.description}
+          education={this.state.education}
+          experience={this.state.experience}
         />
       </main>
     );
