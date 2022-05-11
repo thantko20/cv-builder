@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Preview from './Preview/Preview';
+import EditMode from './EditMode/EditMode';
 
 class Main extends Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class Main extends Component {
     this.person = {
       generalInfo: {
         name: 'John Doe',
+        jobTitle: 'Front-End Developer',
         address: '13th Street, New York, US.',
         phone: '12345678',
         email: 'example@mail.com',
@@ -61,7 +63,8 @@ class Main extends Component {
 
   render() {
     return (
-      <main className='p-20 flex items-start'>
+      <main className='p-4 flex flex-col justify-center items-start gap-5 lg:flex-row'>
+        <EditMode />
         <Preview
           generalInfo={this.person.generalInfo}
           description={this.person.description}

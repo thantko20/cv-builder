@@ -5,7 +5,7 @@ import Main from './components/Main/Main';
 class App extends Component {
   render() {
     return (
-      <div className='min-h-screen bg-zinc-900 w-full font-varela'>
+      <div className='min-h-screen bg-zinc-900 font-varela'>
         <Header />
         <Main />
       </div>
