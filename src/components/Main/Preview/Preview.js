@@ -12,6 +12,7 @@ class Preview extends Component {
       <div className='flex flex-col gap-10 bg-white w-[760px] py-12 px-10 flex-shrink-0'>
         <GeneralInfo
           name={generalInfo.name}
+          jobTitle={generalInfo.jobTitle}
           address={generalInfo.address}
           phone={generalInfo.phone}
           email={generalInfo.email}

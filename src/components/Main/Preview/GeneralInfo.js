@@ -12,8 +12,8 @@ class GeneralInfo extends Component {
     const { name, jobTitle, address, phone, email, website } = this.props;
     return (
       <div>
-        <h2 className='text-6xl font-extrabold mb-3'>{name}</h2>
-        <p>{jobTitle}</p>
+        <h2 className='text-6xl font-extrabold'>{name}</h2>
+        <p className='text-sm mb-3 text-gray-700'>{jobTitle}</p>
         <div className='flex flex-col gap-2 text-gray-500 font-medium text-sm'>
           <div>
             <FontAwesomeIcon icon={faLocationDot} className='mr-2' />
