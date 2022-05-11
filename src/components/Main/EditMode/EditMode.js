@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Description from './Description';
 import Education from './Education';
+import Experience from './Experience';
 import GeneralInfo from './GeneralInfo';
 
 class EditMode extends Component {
@@ -17,6 +18,7 @@ class EditMode extends Component {
     this.handleGenInfo = this.handleGenInfo.bind(this);
     this.handleDes = this.handleDes.bind(this);
     this.handleEducation = this.handleEducation.bind(this);
+    this.handleExperience = this.handleExperience.bind(this);
   }
 
   handleGenInfo(data) {
@@ -33,6 +35,12 @@ class EditMode extends Component {
 
   handleEducation(data) {
     this.setState({ education: data }, () => {
+      this.props.handleData(this.state);
+    });
+  }
+
+  handleExperience(data) {
+    this.setState({ experience: data }, () => {
       this.props.handleData(this.state);
     });
   }
@@ -54,6 +62,10 @@ class EditMode extends Component {
         <Education
           education={education}
           handleEducation={this.handleEducation}
+        />
+        <Experience
+          experience={experience}
+          handleExperience={this.handleExperience}
         />
       </div>
     );
