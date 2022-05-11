@@ -21,7 +21,7 @@ class Description extends Component {
           placeholder='Tell a bit about yourself'
           value={this.state.description}
           onChange={this.handleDesChange}
-          className='w-full outline-none border text-xs block'
+          className='w-full outline-none border text-xs block focus:border-gray-500 rounded-sm'
         ></textarea>
       </div>
     );

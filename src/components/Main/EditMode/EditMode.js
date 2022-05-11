@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Description from './Description';
+import Education from './Education';
 import GeneralInfo from './GeneralInfo';
 
 class EditMode extends Component {
@@ -32,7 +33,7 @@ class EditMode extends Component {
   render() {
     const { generalInfo, description, education, experience } = this.state;
     return (
-      <div className='p-5 bg-white w-[760px] flex-shrink-0 flex flex-col gap-10'>
+      <div className='p-5 bg-white w-[760px] flex-shrink-0 flex flex-col gap-8'>
         <GeneralInfo
           name={generalInfo.name}
           jobTitle={generalInfo.jobTitle}
@@ -43,6 +44,7 @@ class EditMode extends Component {
           handleGenInfo={this.handleGenInfo}
         />
         <Description description={description} handleDes={this.handleDes} />
+        <Education education={education} />
       </div>
     );
   }
