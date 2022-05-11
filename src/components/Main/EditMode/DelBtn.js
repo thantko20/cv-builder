@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 class DelBtn extends Component {
   render() {
     return (
-      <button>
+      <button onClick={this.props.onClick}>
         <FontAwesomeIcon icon={faTrashCan} />
       </button>
     );
