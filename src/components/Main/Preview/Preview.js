@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Education from './Education';
 import Experience from './Experience';
 import GeneralInfo from './GeneralInfo';
-import Objective from './Objective';
+import Description from './Description';
 
 class Preview extends Component {
   render() {
-    const { generalInfo, objective, education, experience } = this.props;
+    const { generalInfo, description, education, experience } = this.props;
 
     return (
       <div className='flex flex-col gap-10 bg-white w-[760px] py-12 px-10 flex-shrink-0'>
@@ -17,7 +17,7 @@ class Preview extends Component {
           email={generalInfo.email}
           website={generalInfo.website}
         />
-        <Objective objective={objective} />
+        <Description description={description} />
         <Education education={education} />
         <Experience experience={experience} />
       </div>
