@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Description from './Description';
 import GeneralInfo from './GeneralInfo';
 
 class EditMode extends Component {
@@ -13,12 +14,19 @@ class EditMode extends Component {
     };
 
     this.handleGenInfo = this.handleGenInfo.bind(this);
+    this.handleDes = this.handleDes.bind(this);
   }
 
   handleGenInfo(data) {
     this.setState({ generalInfo: data }, () =>
       this.props.handleData(this.state),
     );
+  }
+
+  handleDes(data) {
+    this.setState({ description: data }, () => {
+      this.props.handleData(this.state);
+    });
   }
 
   render() {
@@ -34,6 +42,7 @@ class EditMode extends Component {
           website={generalInfo.website}
           handleGenInfo={this.handleGenInfo}
         />
+        <Description description={description} handleDes={this.handleDes} />
       </div>
     );
   }
