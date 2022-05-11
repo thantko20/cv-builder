@@ -10,7 +10,7 @@ class Input extends Component {
         type={type}
         value={value}
         onChange={onChange}
-        className='bg-blue-50 px-1 py-1 text-sm font-medium appearance-none placeholder:text-gray-400 outline-none border rounded focus:border-gray-500'
+        className='bg-gray-50 px-1 py-1 text-sm font-medium appearance-none placeholder:text-gray-400 outline-none border rounded focus:border-gray-500'
       />
     );
   }

@@ -41,7 +41,7 @@ const person = {
 class App extends Component {
   render() {
     return (
-      <div className='min-h-screen bg-zinc-900 font-varela'>
+      <div className='min-h-screen bg-zinc-800 font-varela'>
         <Header />
         <Main
           generalInfo={person.generalInfo}

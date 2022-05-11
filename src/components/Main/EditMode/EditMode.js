@@ -48,7 +48,7 @@ class EditMode extends Component {
   render() {
     const { generalInfo, description, education, experience } = this.state;
     return (
-      <div className='p-5 bg-white w-[760px] flex-shrink-0 flex flex-col gap-8'>
+      <div className='p-5 bg-slate-50 w-[760px] flex-shrink-0 flex flex-col gap-8'>
         <GeneralInfo
           name={generalInfo.name}
           jobTitle={generalInfo.jobTitle}
