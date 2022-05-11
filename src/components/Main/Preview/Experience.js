@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ExperienceRow from './ExperienceRow';
+import uniqid from 'uniqid';
 
 class Experience extends Component {
   render() {
@@ -16,6 +17,7 @@ class Experience extends Component {
               jobTitle={info.jobTitle}
               company={info.company}
               summary={info.summary}
+              key={uniqid()}
             />
           ))}
         </div>

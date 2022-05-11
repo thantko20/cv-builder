@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EducationRow from './EducationRow';
+import uniqid from 'uniqid';
 
 class Education extends Component {
   render() {
@@ -16,6 +17,7 @@ class Education extends Component {
                 to={info.to}
                 degree={info.degree}
                 summary={info.summary}
+                key={uniqid()}
               />
             );
           })}
