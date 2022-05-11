@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TextBox from './TextBox';
 
 class Description extends Component {
   constructor(props) {
@@ -17,12 +18,11 @@ class Description extends Component {
     return (
       <div>
         <h3 className='font-semibold mb-1'>Description</h3>
-        <textarea
-          placeholder='Tell a bit about yourself'
-          value={this.state.description}
+        <TextBox
+          placeHolder='Tell a bit about yourself'
+          text={this.state.description}
           onChange={this.handleDesChange}
-          className='w-full outline-none border text-xs block focus:border-gray-500 rounded-sm'
-        ></textarea>
+        />
       </div>
     );
   }
