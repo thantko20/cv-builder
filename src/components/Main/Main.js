@@ -12,7 +12,7 @@ class Main extends Component {
         email: 'example@mail.com',
         website: 'www.me.com',
       },
-      objective:
+      description:
         "I'm an aspiring front-end web developer based in Burma. I have created several websites with smooth UI and UX for several clients. I mainly develop in MERN stack. I spend my free time with my loved ones.",
       education: [
         {
@@ -64,7 +64,7 @@ class Main extends Component {
       <main className='p-20 flex items-start'>
         <Preview
           generalInfo={this.person.generalInfo}
-          objective={this.person.objective}
+          description={this.person.description}
           education={this.person.education}
           experience={this.person.experience}
         />
