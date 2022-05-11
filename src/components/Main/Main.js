@@ -26,7 +26,7 @@ class Main extends Component {
 
   render() {
     return (
-      <main className='p-4 flex flex-col justify-center items-start gap-5 lg:flex-row'>
+      <main className='p-4 flex flex-col justify-start items-center gap-5 3xl:flex-row 3xl:items-start 3xl:justify-center'>
         <EditMode
           generalInfo={this.state.generalInfo}
           description={this.state.description}
