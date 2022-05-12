@@ -46,7 +46,8 @@ class EditMode extends Component {
   }
 
   render() {
-    const { generalInfo, description, education, experience } = this.state;
+    // const { generalInfo, description, education, experience } = this.state;
+    const { generalInfo, description, education, experience } = this.props;
     return (
       <div className='p-5 bg-slate-50 w-[760px] flex-shrink-0 flex flex-col gap-8'>
         <GeneralInfo
@@ -57,6 +58,7 @@ class EditMode extends Component {
           email={generalInfo.email}
           website={generalInfo.website}
           handleGenInfo={this.handleGenInfo}
+          handleGeneralInfoChange={this.props.handleGeneralInfoChange}
         />
         <Description description={description} handleDes={this.handleDes} />
         <Education

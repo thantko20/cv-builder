@@ -13,6 +13,18 @@ class Main extends Component {
     };
 
     this.handleData = this.handleData.bind(this);
+    this.handleGeneralInfoChange = this.handleGeneralInfoChange.bind(this);
+  }
+
+  handleGeneralInfoChange(e) {
+    const { name, value } = e.target;
+
+    this.setState((state) => {
+      const generalInfo = { ...state.generalInfo };
+      generalInfo[name] = value;
+
+      return { generalInfo };
+    });
   }
 
   handleData(data) {
@@ -32,6 +44,7 @@ class Main extends Component {
           description={this.state.description}
           education={this.state.education}
           experience={this.state.experience}
+          handleGeneralInfoChange={this.handleGeneralInfoChange}
           handleData={this.handleData}
         />
         <Preview
