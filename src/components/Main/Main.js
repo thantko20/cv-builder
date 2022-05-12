@@ -18,6 +18,9 @@ class Main extends Component {
     this.handleEducationChange = this.handleEducationChange.bind(this);
     this.handleAddEdu = this.handleAddEdu.bind(this);
     this.handleDelEdu = this.handleDelEdu.bind(this);
+    this.handleExpChange = this.handleExpChange.bind(this);
+    this.handleDelExp = this.handleDelExp.bind(this);
+    this.handleAddExp = this.handleAddExp.bind(this);
   }
 
   handleGeneralInfoChange(e) {
@@ -70,6 +73,44 @@ class Main extends Component {
     });
   }
 
+  handleExpChange(e, id) {
+    this.setState((state) => {
+      const { name, value } = e.target;
+      const experience = [...state.experience];
+      const index = experience.indexOf(
+        experience.find((item) => item.id === id),
+      );
+      experience[index][name] = value;
+
+      return { experience };
+    });
+  }
+
+  handleDelExp(id) {
+    this.setState((state) => {
+      const experience = state.experience.filter((item) => item.id !== id);
+
+      return { experience };
+    });
+  }
+
+  handleAddExp() {
+    this.setState((state) => {
+      const newJob = {
+        from: '',
+        to: '',
+        jobTitle: '',
+        company: '',
+        summary: '',
+        id: uniqid(),
+      };
+
+      const experience = [...state.experience, newJob];
+
+      return { experience };
+    });
+  }
+
   render() {
     return (
       <main className='p-4 flex flex-col justify-start items-center gap-5 3xl:flex-row 3xl:items-start 3xl:justify-center'>
@@ -83,6 +124,9 @@ class Main extends Component {
           handleEducationChange={this.handleEducationChange}
           handleAddEdu={this.handleAddEdu}
           handleDelEdu={this.handleDelEdu}
+          handleExpChange={this.handleExpChange}
+          handleDelExp={this.handleDelExp}
+          handleAddExp={this.handleAddExp}
         />
         <Preview
           generalInfo={this.state.generalInfo}

@@ -30,7 +30,9 @@ class EditMode extends Component {
         />
         <Experience
           experience={experience}
-          handleExperience={this.handleExperience}
+          handleExpChange={this.props.handleExpChange}
+          handleDelExp={this.props.handleDelExp}
+          handleAddExp={this.props.handleAddExp}
         />
       </div>
     );
