@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Preview from './Preview/Preview';
 import EditMode from './EditMode/EditMode';
+import uniqid from 'uniqid';
 
 class Main extends Component {
   constructor(props) {
@@ -12,8 +13,11 @@ class Main extends Component {
       experience: this.props.experience,
     };
 
-    this.handleData = this.handleData.bind(this);
     this.handleGeneralInfoChange = this.handleGeneralInfoChange.bind(this);
+    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
+    this.handleEducationChange = this.handleEducationChange.bind(this);
+    this.handleAddEdu = this.handleAddEdu.bind(this);
+    this.handleDelEdu = this.handleDelEdu.bind(this);
   }
 
   handleGeneralInfoChange(e) {
@@ -27,12 +31,42 @@ class Main extends Component {
     });
   }
 
-  handleData(data) {
-    this.setState({
-      generalInfo: data.generalInfo,
-      description: data.description,
-      education: data.education,
-      experience: data.experience,
+  handleDescriptionChange(e) {
+    this.setState({ description: e.target.value });
+  }
+
+  handleEducationChange(e, id) {
+    this.setState((state) => {
+      const { name, value } = e.target;
+      const education = [...state.education];
+      const index = education.indexOf(education.find((item) => item.id === id));
+      education[index][name] = value;
+
+      return { education };
+    });
+  }
+
+  handleAddEdu() {
+    this.setState((state) => {
+      const newStudyInfo = {
+        placeOfStudy: '',
+        from: '',
+        to: '',
+        degree: '',
+        summary: '',
+        id: uniqid(),
+      };
+
+      const education = [...state.education, newStudyInfo];
+      return { education };
+    });
+  }
+
+  handleDelEdu(id) {
+    this.setState((state) => {
+      const education = state.education.filter((item) => item.id !== id);
+
+      return { education };
     });
   }
 
@@ -45,7 +79,10 @@ class Main extends Component {
           education={this.state.education}
           experience={this.state.experience}
           handleGeneralInfoChange={this.handleGeneralInfoChange}
-          handleData={this.handleData}
+          handleDescriptionChange={this.handleDescriptionChange}
+          handleEducationChange={this.handleEducationChange}
+          handleAddEdu={this.handleAddEdu}
+          handleDelEdu={this.handleDelEdu}
         />
         <Preview
           generalInfo={this.state.generalInfo}

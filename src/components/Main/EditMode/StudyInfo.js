@@ -4,88 +4,56 @@ import DelBtn from './DelBtn';
 import TextBox from './TextBox';
 
 class StudyInfo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      placeOfStudy: props.placeOfStudy,
-      from: props.from,
-      to: props.to,
-      degree: props.degree,
-      summary: props.summary,
-      id: props.id,
-    };
-    this.handlePlaceChange = this.handlePlaceChange.bind(this);
-    this.handleFromChange = this.handleFromChange.bind(this);
-    this.handleToChange = this.handleToChange.bind(this);
-    this.handleDegreeChange = this.handleDegreeChange.bind(this);
-    this.handleSummaryChange = this.handleSummaryChange.bind(this);
-  }
-
-  handlePlaceChange(e) {
-    this.setState({ placeOfStudy: e.target.value }, () => {
-      this.props.handleStudyInfo(this.state);
-    });
-  }
-
-  handleFromChange(e) {
-    this.setState({ from: e.target.value }, () => {
-      this.props.handleStudyInfo(this.state);
-    });
-  }
-
-  handleToChange(e) {
-    this.setState({ to: e.target.value }, () => {
-      this.props.handleStudyInfo(this.state);
-    });
-  }
-
-  handleDegreeChange(e) {
-    this.setState({ degree: e.target.value }, () => {
-      this.props.handleStudyInfo(this.state);
-    });
-  }
-
-  handleSummaryChange(e) {
-    this.setState({ summary: e.target.value }, () => {
-      this.props.handleStudyInfo(this.state);
-    });
-  }
-
   render() {
+    const {
+      placeOfStudy,
+      from,
+      to,
+      degree,
+      summary,
+      id,
+      handleDel,
+      handleEducationChange: handleChange,
+    } = this.props;
     return (
       <div className='flex flex-col gap-2 shadow-md p-2'>
         <Input
+          name='placeOfStudy'
           placeHolder='Place of Study'
           type='text'
-          value={this.state.placeOfStudy}
-          onChange={this.handlePlaceChange}
+          value={placeOfStudy}
+          onChange={(e) => handleChange(e, id)}
         />
         <div className='flex gap-4'>
           <Input
+            name='from'
             placeHolder='From...'
             type='text'
-            value={this.state.from}
-            onChange={this.handleFromChange}
+            value={from}
+            onChange={(e) => handleChange(e, id)}
           />
           <Input
+            name='to'
             placeHolder='To...'
             type='text'
-            value={this.state.to}
-            onChange={this.handleToChange}
+            value={to}
+            onChange={(e) => handleChange(e, id)}
           />
         </div>
         <Input
+          name='degree'
           placeHolder='Degree'
           type='text'
-          value={this.state.degree}
-          onChange={this.handleDegreeChange}
+          value={degree}
+          onChange={(e) => handleChange(e, id)}
         />
         <TextBox
+          name='summary'
           placeHolder='Summary'
-          text={this.state.summary}
-          onChange={this.handleSummaryChange}
+          text={summary}
+          onChange={(e) => handleChange(e, id)}
         />
-        <DelBtn onClick={() => this.props.handleDel(this.props.id)} />
+        <DelBtn onClick={() => handleDel(id)} />
       </div>
     );
   }
