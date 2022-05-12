@@ -6,6 +6,9 @@ module.exports = {
       oswald: ['Oswald', 'sans-serif'],
       varela: ['Varela Round', 'sans-serif'],
     },
+    screens: {
+      '3xl': '1600px',
+    },
   },
   plugins: [],
 };
