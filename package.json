@@ -1,8 +1,8 @@
 {
+  "homepage": "https://thantko20.github.io/cv-builder/",
   "name": "cv-builder",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://thantko20.github.io/cv-builder",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
