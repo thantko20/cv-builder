@@ -2,26 +2,16 @@ import React, { Component } from 'react';
 import TextBox from './TextBox';
 
 class Description extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { description: props.description };
-    this.handleDesChange = this.handleDesChange.bind(this);
-  }
-
-  handleDesChange(e) {
-    this.setState({ description: e.target.value }, () =>
-      this.props.handleDes(this.state.description),
-    );
-  }
-
   render() {
+    const { description, handleDescriptionChange: handleChange } = this.props;
     return (
       <div>
         <h3 className='font-semibold mb-1'>Description</h3>
         <TextBox
+          name='description'
           placeHolder='Tell a bit about yourself'
-          text={this.state.description}
-          onChange={this.handleDesChange}
+          text={description}
+          onChange={(e) => handleChange(e)}
         />
       </div>
     );
