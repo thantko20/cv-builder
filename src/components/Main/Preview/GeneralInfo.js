@@ -30,7 +30,9 @@ class GeneralInfo extends Component {
           <div>
             <FontAwesomeIcon icon={faWindowMaximize} className='mr-2' />
             <a
-              href={website}
+              href={`https://${website}`}
+              target='_blank'
+              rel='noreferrer'
               className='underline text-blue-500 hover:text-inherit'
             >
               {website}
