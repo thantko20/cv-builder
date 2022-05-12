@@ -4,6 +4,7 @@ class TextBox extends Component {
   render() {
     return (
       <textarea
+        name={this.props.name}
         placeholder={this.props.placeHolder}
         value={this.props.text}
         onChange={this.props.onChange}
