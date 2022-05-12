@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/thantko20/cv-builder/static/css/main.236d57a8.css",
+    "main.js": "/thantko20/cv-builder/static/js/main.a322ce8f.js",
+    "index.html": "/thantko20/cv-builder/index.html",
+    "main.236d57a8.css.map": "/thantko20/cv-builder/static/css/main.236d57a8.css.map",
+    "main.a322ce8f.js.map": "/thantko20/cv-builder/static/js/main.a322ce8f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.236d57a8.css",
+    "static/js/main.a322ce8f.js"
+  ]
+}
