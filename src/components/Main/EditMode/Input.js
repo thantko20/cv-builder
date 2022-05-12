@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 
 class Input extends Component {
   render() {
-    const { placeHolder, type, value, onChange } = this.props;
+    const { name, placeHolder, type, value, onChange } = this.props;
 
     return (
       <input
+        name={name}
         placeholder={placeHolder}
         type={type}
         value={value}
