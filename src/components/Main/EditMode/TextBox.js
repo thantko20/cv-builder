@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class TextBox extends Component {
-  render() {
-    return (
-      <textarea
-        name={this.props.name}
-        placeholder={this.props.placeHolder}
-        value={this.props.text}
-        onChange={this.props.onChange}
-        className='w-full outline-none border text-xs block focus:border-gray-500 rounded-sm min-h-[4em]'
-      ></textarea>
-    );
-  }
-}
+const TextBox = (props) => {
+  const { name, placeHolder, text, onChange } = props;
+
+  return (
+    <textarea
+      name={name}
+      placeholder={placeHolder}
+      value={text}
+      onChange={onChange}
+      className='w-full outline-none border text-xs block focus:border-gray-500 rounded-sm min-h-[4em]'
+    ></textarea>
+  );
+};
 
 export default TextBox;

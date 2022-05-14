@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Input extends Component {
-  render() {
-    const { name, placeHolder, type, value, onChange } = this.props;
+const Input = (props) => {
+  const { name, placeHolder, type, value, onChange } = props;
 
-    return (
-      <input
-        name={name}
-        placeholder={placeHolder}
-        type={type}
-        value={value}
-        onChange={onChange}
-        className='bg-gray-50 px-1 py-1 text-sm font-medium appearance-none placeholder:text-gray-400 outline-none border rounded focus:border-gray-500'
-      />
-    );
-  }
-}
+  return (
+    <input
+      name={name}
+      placeholder={placeHolder}
+      type={type}
+      value={value}
+      onChange={onChange}
+      className='bg-gray-50 px-1 py-1 text-sm font-medium appearance-none placeholder:text-gray-400 outline-none border rounded focus:border-gray-500'
+    />
+  );
+};
 
 export default Input;

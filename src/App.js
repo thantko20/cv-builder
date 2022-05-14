@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import uniqid from 'uniqid';
@@ -38,20 +38,18 @@ const person = {
   ],
 };
 
-class App extends Component {
-  render() {
-    return (
-      <div className='min-h-screen bg-zinc-800 font-varela'>
-        <Header />
-        <Main
-          generalInfo={person.generalInfo}
-          description={person.description}
-          education={person.education}
-          experience={person.experience}
-        />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className='min-h-screen bg-zinc-800 font-varela'>
+      <Header />
+      <Main
+        generalInfo={person.generalInfo}
+        description={person.description}
+        education={person.education}
+        experience={person.experience}
+      />
+    </div>
+  );
+};
 
 export default App;
