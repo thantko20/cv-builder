@@ -1,142 +1,103 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Preview from './Preview/Preview';
 import EditMode from './EditMode/EditMode';
 import uniqid from 'uniqid';
 
-class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      generalInfo: this.props.generalInfo,
-      description: this.props.description,
-      education: this.props.education,
-      experience: this.props.experience,
-    };
+const Main = (props) => {
+  // General Info
+  const [generalInfo, setGeneralInfo] = useState(props.generalInfo);
 
-    this.handleGeneralInfoChange = this.handleGeneralInfoChange.bind(this);
-    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
-    this.handleEducationChange = this.handleEducationChange.bind(this);
-    this.handleAddEdu = this.handleAddEdu.bind(this);
-    this.handleDelEdu = this.handleDelEdu.bind(this);
-    this.handleExpChange = this.handleExpChange.bind(this);
-    this.handleDelExp = this.handleDelExp.bind(this);
-    this.handleAddExp = this.handleAddExp.bind(this);
-  }
-
-  handleGeneralInfoChange(e) {
+  const handleGeneralInfoChange = (e) => {
     const { name, value } = e.target;
 
-    this.setState((state) => {
-      const generalInfo = { ...state.generalInfo };
-      generalInfo[name] = value;
+    setGeneralInfo({ ...generalInfo, [name]: value });
+  };
 
-      return { generalInfo };
-    });
-  }
+  // Description
+  const [description, setDescription] = useState(props.description);
 
-  handleDescriptionChange(e) {
-    this.setState({ description: e.target.value });
-  }
+  const handleDescriptionChange = (e) => setDescription(e.target.value);
 
-  handleEducationChange(e, id) {
-    this.setState((state) => {
-      const { name, value } = e.target;
-      const education = [...state.education];
-      const index = education.indexOf(education.find((item) => item.id === id));
-      education[index][name] = value;
+  // Education
+  const [education, setEducation] = useState(props.education);
 
-      return { education };
-    });
-  }
+  const handleEducationChange = (e, id) => {
+    const { name, value } = e.target;
+    const updatedEducation = education.map((item) =>
+      item.id === id ? { ...item, [name]: value } : item,
+    );
+    setEducation(updatedEducation);
+  };
 
-  handleAddEdu() {
-    this.setState((state) => {
-      const newStudyInfo = {
-        placeOfStudy: '',
-        from: '',
-        to: '',
-        degree: '',
-        summary: '',
-        id: uniqid(),
-      };
-
-      const education = [...state.education, newStudyInfo];
-      return { education };
-    });
-  }
-
-  handleDelEdu(id) {
-    this.setState((state) => {
-      const education = state.education.filter((item) => item.id !== id);
-
-      return { education };
-    });
-  }
-
-  handleExpChange(e, id) {
-    this.setState((state) => {
-      const { name, value } = e.target;
-      const experience = [...state.experience];
-      const index = experience.indexOf(
-        experience.find((item) => item.id === id),
-      );
-      experience[index][name] = value;
-
-      return { experience };
-    });
-  }
-
-  handleDelExp(id) {
-    this.setState((state) => {
-      const experience = state.experience.filter((item) => item.id !== id);
-
-      return { experience };
-    });
-  }
-
-  handleAddExp() {
-    this.setState((state) => {
-      const newJob = {
+  const handleAddEdu = () => {
+    setEducation([
+      ...education,
+      {
         from: '',
         to: '',
         jobTitle: '',
         company: '',
         summary: '',
         id: uniqid(),
-      };
+      },
+    ]);
+  };
 
-      const experience = [...state.experience, newJob];
+  const handleDelEdu = (id) =>
+    setEducation(education.filter((item) => item.id !== id));
 
-      return { experience };
-    });
-  }
+  // Experience
+  const [experience, setExperience] = useState(props.experience);
 
-  render() {
-    return (
-      <main className='p-4 flex flex-col justify-start items-center gap-5 3xl:flex-row 3xl:items-start 3xl:justify-center'>
-        <EditMode
-          generalInfo={this.state.generalInfo}
-          description={this.state.description}
-          education={this.state.education}
-          experience={this.state.experience}
-          handleGeneralInfoChange={this.handleGeneralInfoChange}
-          handleDescriptionChange={this.handleDescriptionChange}
-          handleEducationChange={this.handleEducationChange}
-          handleAddEdu={this.handleAddEdu}
-          handleDelEdu={this.handleDelEdu}
-          handleExpChange={this.handleExpChange}
-          handleDelExp={this.handleDelExp}
-          handleAddExp={this.handleAddExp}
-        />
-        <Preview
-          generalInfo={this.state.generalInfo}
-          description={this.state.description}
-          education={this.state.education}
-          experience={this.state.experience}
-        />
-      </main>
+  const handleExpChange = (e, id) => {
+    const { name, value } = e.target;
+    const updatedEducation = experience.map((item) =>
+      item.id === id ? { ...item, [name]: value } : item,
     );
-  }
-}
+    setExperience(updatedEducation);
+  };
+
+  const handleAddExp = () => {
+    setExperience([
+      ...experience,
+      {
+        from: '',
+        to: '',
+        jobTitle: '',
+        company: '',
+        summary: '',
+        id: uniqid(),
+      },
+    ]);
+  };
+
+  const handleDelExp = (id) =>
+    setExperience(experience.filter((item) => item.id !== id));
+
+  return (
+    <main className='p-4 flex flex-col justify-start items-center gap-5 3xl:flex-row 3xl:items-start 3xl:justify-center'>
+      <EditMode
+        generalInfo={generalInfo}
+        description={description}
+        education={education}
+        experience={experience}
+        handleGeneralInfoChange={handleGeneralInfoChange}
+        handleDescriptionChange={handleDescriptionChange}
+        handleEducationChange={handleEducationChange}
+        handleAddEdu={handleAddEdu}
+        handleDelEdu={handleDelEdu}
+        handleExpChange={handleExpChange}
+        handleDelExp={handleDelExp}
+        handleAddExp={handleAddExp}
+      />
+      <Preview
+        generalInfo={generalInfo}
+        description={description}
+        education={education}
+        experience={experience}
+      />
+    </main>
+  );
+};
 
 export default Main;
